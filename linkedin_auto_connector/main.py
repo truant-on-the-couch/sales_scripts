@@ -6,7 +6,7 @@ from box import Box
 
 
 def get_and_send_msg():
-    # go to excel to get name
+    # go to excel to get first name
     pyautogui.click(35, 200)
     time.sleep(1)
     # left 9 times in this case
@@ -24,6 +24,12 @@ def get_and_send_msg():
     # double click name
     pyautogui.doubleClick(376, 294)
     time.sleep(1)
+    # paste name
+    pyautogui.hotkey('ctrl', 'v')
+    time.sleep(.5)
+    # backspace to fix \n problem
+    pyautogui.press('backspace')
+    time.sleep(.5)
     # select all
     pyautogui.hotkey('ctrl', 'a')
     time.sleep(.5)
@@ -31,12 +37,13 @@ def get_and_send_msg():
     time.sleep(.5)
     # switch back to chrome
     pyautogui.click(35, 130)
-    time.sleep(1)
+    time.sleep(2)
     # paste selection
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(1)
     # click done button
-    pyautogui.click(955, 340)
+    pyautogui.click(955, 450)
+    time.sleep(1)
 
 
 def log_person():
