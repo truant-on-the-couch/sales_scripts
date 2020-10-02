@@ -6,7 +6,7 @@ Notes:
 Getting started:
 1. download and configure virtualbox with ubuntu 20 lts
 2. once in ubuntu: run ``` sudo apt-get install featherpad```
-3. configure side-dock to look like required_dock_setup.png (found in setup_help folder) by dragging applications
+3. configure side-dock to look like required_dock_setup.png (found in setup_help folder) by dragging applications (just chrome, calc, text editor, writer, and featherpad) (which means files app must be on top of chrome)
 4. make sure you have pip3 installed. Check by running pip3 --version. Otherwise run ```sudo apt-get install python3-pip```
 5. then (referring to https://pyautogui.readthedocs.io/en/latest/install.html) run ```python3 -m pip install pyautogui```
 6. run ```sudo apt-get install scrot python3-tk python3-dev python3-opencv```
