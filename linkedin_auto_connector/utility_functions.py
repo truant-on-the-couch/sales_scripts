@@ -25,17 +25,7 @@ def get_and_send_msg():
 
 def log_person(second_round=bool):
 
-    # make sure you're on chrome
-    pyautogui.click(35, 130)
-    time.sleep(1)
-    # click search field
-    pyautogui.click(345, 157)
-    time.sleep(1)
-    # select all
-    pyautogui.hotkey('ctrl', 'a')
-    time.sleep(1)
-    # copy name
-    pyautogui.hotkey('ctrl', 'c')
+    #name with company should already be in clipboard
     time.sleep(1)
     if second_round is True:
         # go to ....
