@@ -1,5 +1,6 @@
 import pyautogui
 import time
+
 from utility_functions import *
 
 
@@ -65,10 +66,10 @@ def round1():
         # paste company name
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(1)
-        #copy for possible log later
-        pyautogui.hotkey('ctrl','a')
+        # copy for possible log later
+        pyautogui.hotkey('ctrl', 'a')
         time.sleep(.5)
-        pyautogui.hotkey('ctrl','c')
+        pyautogui.hotkey('ctrl', 'c')
         time.sleep(.5)
         pyautogui.press('enter')  # hit enter to search
         time.sleep(4)
@@ -87,7 +88,7 @@ def round1():
                 x, y = pyautogui.locateCenterOnScreen(
                     './images/no_results_found.png', grayscale=False)
                 log_person()
-            except:
+            except TypeError:
                 # click on name to get to profile
                 pyautogui.click(x=292, y=400, clicks=1, button='left')
                 time.sleep(4)

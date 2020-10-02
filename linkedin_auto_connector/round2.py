@@ -38,24 +38,30 @@ def round2():
         # enter
         pyautogui.press('enter')
         time.sleep(3)
-        # see if there's a connect button in plain sight
+        # see if we have a no_results_found page
         try:
             x, y = pyautogui.locateCenterOnScreen(
-                './images/connect_button.png', grayscale=True)
-            pyautogui.click(x, y)
-            time.sleep(1.5)
-            # if email verif box
-            handle_email_verif(second_round=True)
+                './images/no_results_found.png', grayscale=False)
+            log_person(second_round=True)
         except TypeError:
-            # click profile name
-            pyautogui.click(x=292, y=400)
-            time.sleep(3)
-            # click more
-            pyautogui.click(x=873, y=462)
-            time.sleep(1)
-            # click connect
-            pyautogui.click(x=948, y=630)
-            time.sleep(1)
-            # make sure box with done button is present
-            check_if_done_button(second_round=True)
-            time.sleep(1)
+            # see if there's a connect button in plain sight
+            try:
+                x, y = pyautogui.locateCenterOnScreen(
+                    './images/connect_button.png', grayscale=True)
+                pyautogui.click(x, y)
+                time.sleep(1.5)
+                # if email verif box
+                handle_email_verif(second_round=True)
+            except TypeError:
+                # click profile name
+                pyautogui.click(x=292, y=400)
+                time.sleep(3)
+                # click more
+                pyautogui.click(x=873, y=462)
+                time.sleep(1)
+                # click connect
+                pyautogui.click(x=948, y=630)
+                time.sleep(1)
+                # make sure box with done button is present
+                check_if_done_button(second_round=True)
+                time.sleep(1)
