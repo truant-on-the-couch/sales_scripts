@@ -4,7 +4,7 @@ import time
 from utility_functions import *
 
 
-def round1():
+def round1(msgs=bool):
     while True:
         # start in excel sheet on full name cell
         pyautogui.hotkey('ctrl', 'c')
@@ -81,7 +81,9 @@ def round1():
             pyautogui.click(x, y)
             time.sleep(1.5)
             # if email verif box
-            handle_email_verif()
+
+            handle_email_verif(
+                msgs=True) if msgs is True else handle_email_verif()
         except TypeError:
             # see if there's a not found
             try:
@@ -100,7 +102,8 @@ def round1():
                         './images/more_connect_button.png', confidence=.5, grayscale=False)
                     pyautogui.click(x, y)
                     time.sleep(2)
-                    check_if_done_button()
+                    check_if_done_button(
+                        msgs=True) if msgs is True else check_if_done_button()
 
                 except TypeError:
                     log_person()

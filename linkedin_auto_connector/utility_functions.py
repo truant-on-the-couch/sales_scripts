@@ -25,7 +25,7 @@ def get_and_send_msg():
 
 def log_person(second_round=bool):
 
-    #name with company should already be in clipboard
+    # name with company should already be in clipboard
     time.sleep(1)
     if second_round is True:
         # go to ....
@@ -53,7 +53,7 @@ def log_person(second_round=bool):
         time.sleep(.5)
 
 
-def handle_email_verif(second_round=bool):
+def handle_email_verif(second_round=bool, msgs=bool):
     # if email verif box
     try:
         x, y = pyautogui.locateCenterOnScreen(
@@ -62,18 +62,23 @@ def handle_email_verif(second_round=bool):
         log_person(second_round=True) if second_round is True else log_person()
 
     except TypeError:
-        # still need to click add a note button
-        pyautogui.click(820, 340)
-        time.sleep(.5)
-        get_and_send_msg()
+        if msgs is True:
+            # still need to click add a note button
+            pyautogui.click(820, 340)
+            time.sleep(.5)
+            get_and_send_msg()
+        else:
+            # click done button
+            pyautogui.click(955, 337)
+            time.sleep(1)
 
 
-def check_if_done_button(second_round=bool):
+def check_if_done_button(second_round=bool, msgs=bool):
     try:
         # did we pull up the box with done button?
         x1, y1 = pyautogui.locateCenterOnScreen(
             './images/done_box.png', confidence=.7, grayscale=False)
         # if yes run handle_email_verif()
-        handle_email_verif()
+        handle_email_verif(msgs=True) if msgs is True else handle_email_verif()
     except:
         log_person(second_round=True) if second_round is True else log_person()

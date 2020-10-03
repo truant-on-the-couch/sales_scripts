@@ -5,7 +5,7 @@ from utility_functions import *
 # connect position is hardcoded.
 
 
-def round2():
+def round2(msgs=bool):
     while True:
         # go to text editor
         pyautogui.click(35, 270)
@@ -51,7 +51,8 @@ def round2():
                 pyautogui.click(x, y)
                 time.sleep(1.5)
                 # if email verif box
-                handle_email_verif(second_round=True)
+                handle_email_verif(
+                    msgs=True, second_round=True) if msgs is True else handle_email_verif(second_round=True)
             except TypeError:
                 # click profile name
                 pyautogui.click(x=292, y=400)
@@ -63,5 +64,6 @@ def round2():
                 pyautogui.click(x=948, y=630)
                 time.sleep(1)
                 # make sure box with done button is present
-                check_if_done_button(second_round=True)
+                check_if_done_button(
+                    second_round=True, msgs=True) if msgs is True else check_if_done_button(second_round=True)
                 time.sleep(1)

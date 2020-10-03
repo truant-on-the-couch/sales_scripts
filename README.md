@@ -15,8 +15,7 @@ Getting started:
 9. make sure that all applications (chrome, calc, text editor, writer, featherpad) are maximized (but not in fullscreen mode)
 10. head on over to TO RUN: section.
 
-Type python3 -> import pyautogui -> pyautogui.displayMousePosition() 
-to find mouse positions and change them accordingly for your system
+
 
 Directions for getting dependencies from fresh install of ubuntu:
 ...
@@ -28,14 +27,17 @@ TO RUN:
 3. writer has messaging content in it
 4. text editor and featherpad are both open AND have been saved at least once (no untitled docs)
 5. all apps are fully enlarged (but not in fullscreen mode)
-6. run ```python3 main.py```
+6. ```cd linkedin_auto_connector``` run ```python3 main.py```
 7. select round1 if first round, round2 after round1 is finished
 8. you'll have 10 seconds to get back to the calc sheet with cell highlighted on full name to begin on. THIS IS THE STARTING PLACE
-8. ~200 leads can take ~3 hours to run. 
+9. ~200 leads can take ~3 hours to run. 
 
 TIPS:
 - Don't interfere with GUI. You'll screw everything up. If you do screw up the sequence, try and ctrl tab to terminal and then ctrl c
-- 
+- round2 is different from round1 in that its profile page connect sequence is hardcoded. This can sometimes be helpful due to connect button false positives from the image analyzer. 
+- if you need to configure it to a different resolution, change the hardcoded coordinate values by opening a new terminal window, then type ```python3``` -> ```import pyautogui``` -> ```pyautogui.displayMousePosition()```to find mouse positions and change them accordingly for your system
+- there is no official finish or done code atm, so take a look at where it's at in the spreadsheet
 
 Improvement:
-- It'd be great if it could dynamically configure the coordinates based off of display resolution
+- It'd be great if it could dynamically configure the hardcoded coordinates based off of display resolution
+- An artifical DONE stamp in the excel sheet would be nice
