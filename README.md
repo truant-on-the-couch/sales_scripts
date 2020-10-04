@@ -16,27 +16,23 @@ Getting started:
 10. head on over to TO RUN: section.
 
 
-
-Directions for getting dependencies from fresh install of ubuntu:
-...
-
-
 TO RUN:
-1. Make sure chrome is on linkedin home page
+0. if using virtual box, use ```VBoxManage controlvm "$Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
+1. make sure chrome is on linkedin home page
 2. fullname cell is selected with company name to the right of it
 3. writer has messaging content in it
-4. text editor and featherpad are both open AND have been saved at least once (no untitled docs)
+4. text editor and featherpad are both open AND have been saved at least once (no untitled docs) (use .txt format)
 5. all apps are fully enlarged (but not in fullscreen mode)
 6. ```cd linkedin_auto_connector``` run ```python3 main.py```
-7. select round1 if first round, round2 after round1 is finished
+7. select round1 if first round. Round2 is experimental. Don't use it.
 8. you'll have 10 seconds to get back to the calc sheet with cell highlighted on full name to begin on. THIS IS THE STARTING PLACE
 9. ~200 leads can take ~3 hours to run. 
 
 TIPS:
 - Don't interfere with GUI. You'll screw everything up. If you do screw up the sequence, try and ctrl tab to terminal and then ctrl c
-- round2 is different from round1 in that its profile page connect sequence is hardcoded. This can sometimes be helpful due to connect button false positives from the image analyzer. 
+- round2 has little function now after a big fix. Don't use it for now. 
 - if you need to configure it to a different resolution, change the hardcoded coordinate values by opening a new terminal window, then type ```python3``` -> ```import pyautogui``` -> ```pyautogui.displayMousePosition()```to find mouse positions and change them accordingly for your system
-- there is no official finish or done code atm, so take a look at where it's at in the spreadsheet
+- there is no official finish or done code atm, so take a look at where it's at in the spreadsheet every so often
 
 Improvement:
 - It'd be great if it could dynamically configure the hardcoded coordinates based off of display resolution

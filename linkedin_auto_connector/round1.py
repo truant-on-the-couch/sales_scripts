@@ -99,7 +99,7 @@ def round1(msgs=bool):
                 time.sleep(1)
                 try:
                     x, y = pyautogui.locateCenterOnScreen(
-                        './images/more_connect_button.png', confidence=.5, grayscale=False)
+                        './images/more_connect_button.png', confidence=.5, grayscale=False, region=(841, 610, 105, 33))
                     pyautogui.click(x, y)
                     time.sleep(2)
                     check_if_done_button(

@@ -1,6 +1,5 @@
 import pyautogui
 import time
-from box import Box
 
 
 def get_and_send_msg():
