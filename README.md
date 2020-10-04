@@ -1,6 +1,6 @@
 Notes:
 - these tools were tested on ubuntu 20 lts
-- linkedin autoconnector is calibrated for a 1366 x 768 (16:9) resolution.
+- linkedin autoconnector is calibrated for a 1366 x 768 (16:9) resolution. Use ```VBoxManage controlvm "Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
 - the setup_help folder contains screenshots of the required gui config.
 
 Getting started:
@@ -17,7 +17,7 @@ Getting started:
 
 
 TO RUN:
-0. if using virtual box, use ```VBoxManage controlvm "$Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
+0. if using virtual box, use ```VBoxManage controlvm "Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
 1. make sure chrome is on linkedin home page
 2. fullname cell is selected with company name to the right of it
 3. writer has messaging content in it
