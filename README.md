@@ -37,3 +37,8 @@ TIPS:
 Improvement:
 - It'd be great if it could dynamically configure the hardcoded coordinates based off of display resolution
 - An artifical DONE stamp in the excel sheet would be nice
+
+
+Known problems:
+- Sometimes the directory for the images in linkedin_auto_connector can have permission problems. Your error would look like: ```OSError: Failed to read ./images/connect_button.png because file is missing, has improper permissions, or is an unsupported or invalid format```, even though it's not actually missing. To fix this, cd to linkedin_auto_connector, then ```mkdir new_images``` -> ```mv images/* new_images``` -> ```rm -rf images``` -> ```mv new_images images```. You can also do this via a gui.
+
