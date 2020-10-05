@@ -2,6 +2,7 @@ Notes:
 - these tools were tested on ubuntu 20 lts
 - linkedin autoconnector is calibrated for a 1366 x 768 (16:9) resolution. Use ```VBoxManage controlvm "Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
 - the setup_help folder contains screenshots of the required gui config.
+- here is a youtube video on how to configure it from scratch made: https://www.youtube.com/watch?v=4aofRBBGRpo&feature=youtu.be (ty, helaughs hecries)
 
 Getting started:
 1. download and configure virtualbox with ubuntu 20 lts
@@ -15,7 +16,6 @@ Getting started:
 9. make sure that all applications (chrome, calc, text editor, writer, featherpad) are maximized (but not in fullscreen mode)
 10. chrome's bookmark bar must be shown
 11. head on over to TO RUN: section.
-
 
 TO RUN:
 0. if using virtual box, use ```VBoxManage controlvm "Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
