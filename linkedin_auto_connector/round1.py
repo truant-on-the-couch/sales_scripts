@@ -106,7 +106,15 @@ def round1(msgs=bool):
                         msgs=True) if msgs is True else check_if_done_button()
 
                 except TypeError:
-                    log_person()
+                    try:
+                        x, y = pyautogui.locateCenterOnScreen(
+                            './images/more_connect_button.png', confidence=.5, grayscale=False, region=(841, 570, 105, 33))
+                        pyautogui.click(x, y)
+                        time.sleep(2)
+                        check_if_done_button(
+                            msgs=True) if msgs is True else check_if_done_button()
+                    except TypeError:
+                        log_person()
 
         time.sleep(2)
         # go back to excel sheet
