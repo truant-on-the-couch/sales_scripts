@@ -13,7 +13,8 @@ Getting started:
 7. make sure chrome tab that is open is on linkedin home page
 8. make sure that in your excel sheet the selected cell is on the 'full name' column, and the 'company name' is to the right of it. Refer to calc_setup.png
 9. make sure that all applications (chrome, calc, text editor, writer, featherpad) are maximized (but not in fullscreen mode)
-10. head on over to TO RUN: section.
+10. chrome's bookmark bar must be shown
+11. head on over to TO RUN: section.
 
 
 TO RUN:
