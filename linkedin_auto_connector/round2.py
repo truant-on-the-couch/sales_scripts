@@ -5,7 +5,7 @@ from utility_functions import *
 # connect position is hardcoded.
 
 
-def round2(msgs=bool):
+def round2(msgs=bool, search_word=str):
     while True:
         # go to text editor
         pyautogui.click(35, 270)
@@ -38,9 +38,7 @@ def round2(msgs=bool):
         # paste selection
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(1)
-        # type space then security
-        #CHANGE THIS IF APPROPRIATE
-        pyautogui.write(' security', interval=.25)
+        pyautogui.write(' '+search_word, interval=.25)
         time.sleep(.5)
         # enter
         pyautogui.press('enter')

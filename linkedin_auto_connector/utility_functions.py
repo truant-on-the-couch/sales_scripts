@@ -50,9 +50,9 @@ def log_person(second_round=bool):
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(.5)
         # make a new line
-        #don't need it anymore I guess.
-        #pyautogui.press('enter')
-        #time.sleep(.5)
+        # don't need it anymore I guess.
+        # pyautogui.press('enter')
+        # time.sleep(.5)
         # save
         pyautogui.hotkey('ctrl', 's')
         time.sleep(.5)
@@ -142,7 +142,7 @@ def handle_email_verif(second_round=bool, msgs=bool):
 def check_if_done_button(second_round=bool, msgs=bool):
     try:
         # did we pull up the box with done button?
-        x1, y1 = pyautogui.locateCenterOnScreen(
+        pyautogui.locateCenterOnScreen(
             './images/done_box.png', confidence=.7, grayscale=True)
         # if yes run handle_email_verif()
         handle_email_verif(msgs=True) if msgs is True else handle_email_verif()

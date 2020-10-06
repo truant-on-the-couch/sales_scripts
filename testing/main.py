@@ -4,9 +4,9 @@ import time
 time.sleep(5)
 
 try:
-    for pos in pyautogui.locateAllOnScreen('./../linkedin_auto_connector/images/more_connect_button.png', confidence=.5):
+    for pos in pyautogui.locateAllOnScreen('./../linkedin_auto_connector/images/request_a_reccomendation_button.png', confidence=.1):
         print(pos)
-except TypeError:
+except:
     print("couldn't find anything")
 
 # try:
@@ -17,6 +17,6 @@ except TypeError:
 #     print("not found")
 
 
-#to get the more difficult inner connect:
-#test this region too
+# to get the more difficult inner connect:
+# test this region too
 # Box(left=841, top=570, width=105, height=33)

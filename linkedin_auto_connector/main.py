@@ -20,6 +20,9 @@ if round == 'round1':
     round1(msgs=True) if msgs == 'yes' else round1()
 else:
     print("you entered ", round)
-    print("you have 10 seconds to make sure that all startup conditions are set. Refer to README if unsure.")
+    search_word = input(
+        "enter an additonal search item to be placed after name. E.g. security, which gives: Joe Smith security. Press enter to leave blank\n")
+    print("you have 10 seconds to make sure that all startup conditions are set. Refer to README if unsure.\n")
     time.sleep(10)
-    round2(msgs=True) if msgs == 'yes' else round2()
+    round2(msgs=True, search_word=search_word) if msgs == 'yes' else round2(
+        search_word=search_word)
