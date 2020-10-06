@@ -102,7 +102,7 @@ def handle_email_verif(second_round=bool, msgs=bool):
         try:
             # is the done button blue?
             x1, y1 = pyautogui.locateCenterOnScreen(
-                './images/done_box.png', confidence=.8, grayscale=False)
+                './images/done_button.png', confidence=.8, grayscale=False)
             pyautogui.click(x1, y1)
             time.sleep(2)
         except TypeError:
@@ -113,12 +113,28 @@ def handle_email_verif(second_round=bool, msgs=bool):
     except TypeError:
         if msgs is True:
             # still need to click add a note button
-            pyautogui.click(820, 340)
+            # used to be: pyautogui.click(820, 340)
+            try:
+                x, y = pyautogui.locateCenterOnScreen(
+                    './images/add_a_note_button.png', confidence=.8)
+                pyautogui.click(x, y)
+
+            except TypeError:
+                # click add a note button manually
+                pyautogui.click(820, 340)
+
             time.sleep(.5)
             get_and_send_msg()
         else:
             # click done button
-            pyautogui.click(955, 337)
+            try:
+                x, y = pyautogui.locateCenterOnScreen(
+                    './images/done_button.png', confidence=.7)
+                pyautogui.click(x, y)
+            except TypeError:
+                # click done button manually
+                pyautogui.click(955, 337)
+
             time.sleep(1)
 
 
