@@ -25,11 +25,12 @@ TO RUN:
 4. text editor and featherpad are both open AND have been saved at least once (no untitled docs) (use .txt format)
 5. all apps are fully enlarged (but not in fullscreen mode)
 6. ```cd linkedin_auto_connector``` run ```python3 main.py```
-7. select round1 if first round. Round2 is experimental. Don't use it.
+7. select round1 for first time usage. Use round2 after text editor list populates. If using round2, change line 43 in round2.py to the keyword you want. I am currently using 'security' (keep extra space)
 8. you'll have 10 seconds to get back to the calc sheet with cell highlighted on full name to begin on. THIS IS THE STARTING PLACE
 9. ~200 leads can take ~3 hours to run. 
 
 TIPS:
+- Don't forget to change line 43 in round2.py from ' security' to ' $whatever'
 - Don't interfere with GUI. You'll screw everything up. If you do screw up the sequence, try and ctrl tab to terminal and then ctrl c
 - round2 has little function now after a big fix. Don't use it for now. 
 - if you need to configure it to a different resolution, change the hardcoded coordinate values by opening a new terminal window, then type ```python3``` -> ```import pyautogui``` -> ```pyautogui.displayMousePosition()```to find mouse positions and change them accordingly for your system
@@ -39,6 +40,8 @@ Improvement:
 - It'd be great if it could dynamically configure the hardcoded coordinates based off of display resolution
 - An artifical DONE stamp in the excel sheet would be nice
 
+More on round2:
+After round1, there may be some cases where a connection invite couldn't be had, likely due to a bad search result. The log made in Text Editor with just the name of the person will be the source for searches done by round2. When using round2 make sure you edit line 43 so that, if you have the name joe smith in the Text Editor file, and ' banking' in line 43, then the round2 search will enter joe smith banking, which can improve results.
 
 Known problems:
 - Sometimes the directory for the images in linkedin_auto_connector can have permission problems. Your error would look like: ```OSError: Failed to read ./images/connect_button.png because file is missing, has improper permissions, or is an unsupported or invalid format```, even though it's not actually missing. To fix this, cd to linkedin_auto_connector, then ```mkdir new_images``` -> ```mv images/* new_images``` -> ```rm -rf images``` -> ```mv new_images images```. You can also do this via a gui.

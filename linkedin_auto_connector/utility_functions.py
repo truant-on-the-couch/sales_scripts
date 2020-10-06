@@ -50,8 +50,9 @@ def log_person(second_round=bool):
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(.5)
         # make a new line
-        pyautogui.press('enter')
-        time.sleep(.5)
+        #don't need it anymore I guess.
+        #pyautogui.press('enter')
+        #time.sleep(.5)
         # save
         pyautogui.hotkey('ctrl', 's')
         time.sleep(.5)
