@@ -14,7 +14,7 @@ def round2(msgs=bool, search_word=str):
         pyautogui.hotkey('ctrl', 's')
         time.sleep(1)
         # click 3 times on top line
-        pyautogui.click(108, 80, clicks=3, interval=.3)
+        pyautogui.click(127, 78, clicks=3)
         time.sleep(1)
         # cut
         pyautogui.hotkey('ctrl', 'x')
