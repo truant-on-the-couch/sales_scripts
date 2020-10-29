@@ -4,9 +4,9 @@ import time
 time.sleep(5)
 
 try:
-    for pos in pyautogui.locateAllOnScreen('./../linkedin_auto_connector/images/request_a_reccomendation_button.png', confidence=.1):
+    for pos in pyautogui.locateAllOnScreen('./../linkedin_auto_connector/images/end_calc.png'):
         print(pos)
-except:
+except TypeError:
     print("couldn't find anything")
 
 # try:

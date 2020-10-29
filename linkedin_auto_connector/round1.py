@@ -14,7 +14,7 @@ def round1(msgs=bool):
         time.sleep(2)
         # click search bar
         pyautogui.click(x=345, y=157, clicks=1, button='left')
-        time.sleep(1)
+        time.sleep(2)
         # delete current text
         pyautogui.hotkey('ctrl', 'a')
         time.sleep(1)
@@ -81,7 +81,6 @@ def round1(msgs=bool):
             pyautogui.click(x, y)
             time.sleep(1.5)
             # if email verif box
-
             handle_email_verif(
                 msgs=True) if msgs is True else handle_email_verif()
         except TypeError:
@@ -125,3 +124,10 @@ def round1(msgs=bool):
         time.sleep(1)
         pyautogui.press('down')
         time.sleep(1)
+        # try:
+        #     pyautogui.locateCenterOnScreen(
+        #         './images/end_calc.png')
+        #     print('found end!!')
+        #     break
+        # except TypeError:
+        #     continue

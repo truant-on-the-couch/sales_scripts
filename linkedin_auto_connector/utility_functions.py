@@ -18,7 +18,21 @@ def get_and_send_msg():
     pyautogui.hotkey('ctrl', 'v')
     time.sleep(1)
     # click done button
-    pyautogui.click(955, 450)
+    # pyautogui.click(955, 450)
+    # click done button
+    try:
+        x, y = pyautogui.locateCenterOnScreen(
+            './images/send_button.png')
+        pyautogui.click(x, y)
+        mark_with_an_x()
+
+    except TypeError:
+        # click done button manually
+        pyautogui.click(955, 450)
+        mark_with_an_x()
+
+        #print('couldnt find send button')
+
     time.sleep(1)
 
 
@@ -106,6 +120,7 @@ def handle_email_verif(second_round=bool, msgs=bool):
                 './images/done_button.png', confidence=.8, grayscale=False)
             pyautogui.click(x1, y1)
             time.sleep(2)
+            mark_with_an_x()
         except TypeError:
             pyautogui.press('esc')
             log_person(
@@ -130,11 +145,15 @@ def handle_email_verif(second_round=bool, msgs=bool):
             # click done button
             try:
                 x, y = pyautogui.locateCenterOnScreen(
-                    './images/done_button.png', confidence=.7)
+                    './images/done_button.png')
                 pyautogui.click(x, y)
+                mark_with_an_x()
+
             except TypeError:
                 # click done button manually
                 pyautogui.click(955, 337)
+                mark_with_an_x()
+                #print('couldnt find done button')
 
             time.sleep(1)
 
@@ -148,3 +167,15 @@ def check_if_done_button(second_round=bool, msgs=bool):
         handle_email_verif(msgs=True) if msgs is True else handle_email_verif()
     except:
         log_person(second_round=True) if second_round is True else log_person()
+
+
+def mark_with_an_x():
+    # click calc
+    pyautogui.click(34, 204)
+    time.sleep(.5)
+    pyautogui.press('right', presses=4, interval=.5)
+    time.sleep(.5)
+    pyautogui.typewrite('x')
+    time.sleep(.5)
+    pyautogui.press('left', presses=4, interval=.5)
+    time.sleep(.5)
