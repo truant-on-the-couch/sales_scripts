@@ -24,15 +24,13 @@ def get_and_send_msg():
         x, y = pyautogui.locateCenterOnScreen(
             './images/send_button.png')
         pyautogui.click(x, y)
-        mark_with_an_x()
 
     except TypeError:
         # click done button manually
         pyautogui.click(955, 450)
-        mark_with_an_x()
 
         #print('couldnt find send button')
-
+    mark_with_an_x()
     time.sleep(1)
 
 
