@@ -22,12 +22,12 @@ def get_and_send_msg():
     # click done button
     try:
         x, y = pyautogui.locateCenterOnScreen(
-            './images/send_button.png')
+            '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png')
         pyautogui.click(x, y)
 
     except TypeError:
-        # click done button manually
-        pyautogui.click(955, 450)
+        # click send button manually
+        pyautogui.click(930, 450)
 
         #print('couldnt find send button')
     mark_with_an_x()
@@ -74,7 +74,7 @@ def handle_email_verif(second_round=bool, msgs=bool):
     # if email verif box
     try:
         x, y = pyautogui.locateCenterOnScreen(
-            './images/email_verif_box.png', confidence=.5, grayscale=True)
+            '/home/michel/sales_scripts/linkedin_auto_connector/images/email_verif_box.png', confidence=.5)
         # go to excel
         pyautogui.click(35, 200)
         time.sleep(1)
@@ -111,11 +111,11 @@ def handle_email_verif(second_round=bool, msgs=bool):
         # paste selection
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(1)
-        # see if done button is blue
+        # see if send button is blue
         try:
-            # is the done button blue?
+            # is the send button blue?
             x1, y1 = pyautogui.locateCenterOnScreen(
-                './images/done_button.png', confidence=.8, grayscale=False)
+                '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png', confidence=.8)
             pyautogui.click(x1, y1)
             time.sleep(2)
             mark_with_an_x()
@@ -130,40 +130,41 @@ def handle_email_verif(second_round=bool, msgs=bool):
             # used to be: pyautogui.click(820, 340)
             try:
                 x, y = pyautogui.locateCenterOnScreen(
-                    './images/add_a_note_button.png', confidence=.8)
+                    '/home/michel/sales_scripts/linkedin_auto_connector/images/add_a_note_button.png', confidence=.7)
                 pyautogui.click(x, y)
 
             except TypeError:
                 # click add a note button manually
-                pyautogui.click(820, 340)
+                print('couldnt find add a note button')
+                pyautogui.click(815, 333)
 
             time.sleep(.5)
             get_and_send_msg()
         else:
-            # click done button
+            # click send button
             try:
                 x, y = pyautogui.locateCenterOnScreen(
-                    './images/done_button.png')
+                    '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png')
                 pyautogui.click(x, y)
                 mark_with_an_x()
 
             except TypeError:
-                # click done button manually
-                pyautogui.click(955, 337)
+                # click send button manually
+                pyautogui.click(930, 311)
                 mark_with_an_x()
-                #print('couldnt find done button')
+                #print('couldnt find send button')
 
             time.sleep(1)
 
 
 def check_if_done_button(second_round=bool, msgs=bool):
     try:
-        # did we pull up the box with done button?
+        # did we pull up the box with add|send button?
         pyautogui.locateCenterOnScreen(
-            './images/done_box.png', confidence=.7, grayscale=True)
+            '/home/michel/sales_scripts/linkedin_auto_connector/images/done_box.png', confidence=.7, grayscale=False)
         # if yes run handle_email_verif()
         handle_email_verif(msgs=True) if msgs is True else handle_email_verif()
-    except:
+    except TypeError:
         log_person(second_round=True) if second_round is True else log_person()
 
 

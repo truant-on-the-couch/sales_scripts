@@ -77,7 +77,7 @@ def round1(msgs=bool):
         # logic for if first button is connect or message
         try:
             x, y = pyautogui.locateCenterOnScreen(
-                './images/connect_button.png', grayscale=True)
+                '/home/michel/sales_scripts/linkedin_auto_connector/images/connect_button.png', region=(815, 390, 104, 45))
             pyautogui.click(x, y)
             time.sleep(1.5)
             # if email verif box
@@ -87,7 +87,7 @@ def round1(msgs=bool):
             # see if there's a not found
             try:
                 x, y = pyautogui.locateCenterOnScreen(
-                    './images/no_results_found.png', grayscale=False)
+                    '/home/michel/sales_scripts/linkedin_auto_connector/images/no_results_found.png', grayscale=False)
                 log_person()
             except TypeError:
                 # click on name to get to profile
@@ -98,8 +98,10 @@ def round1(msgs=bool):
                 time.sleep(1)
                 try:
                     x, y = pyautogui.locateCenterOnScreen(
-                        './images/more_connect_button.png', confidence=.5, grayscale=False, region=(841, 610, 105, 33))
+                        '/home/michel/sales_scripts/linkedin_auto_connector/images/more_connect_button.png')
                     pyautogui.click(x, y)
+                    # (left=837, top=617, width=101, height=25)
+
                     time.sleep(2)
                     check_if_done_button(
                         msgs=True) if msgs is True else check_if_done_button()
@@ -107,7 +109,7 @@ def round1(msgs=bool):
                 except TypeError:
                     try:
                         x, y = pyautogui.locateCenterOnScreen(
-                            './images/more_connect_button.png', confidence=.5, grayscale=False, region=(841, 570, 105, 33))
+                            '/home/michel/sales_scripts/linkedin_auto_connector/images/more_connect_button.png')
                         pyautogui.click(x, y)
                         time.sleep(2)
                         check_if_done_button(

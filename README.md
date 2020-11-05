@@ -1,8 +1,14 @@
+Changes 11/5/2020:
+- round2 is currently defunct
+- file paths to images are absolute now in the code. It helps alleviate a permissions problem. This requires you to have to copy the paths of your own local 'images' folder files and replace them in the code base
+- updated images and configurations to accomdate linkedin's new gui
+
 Notes:
 - these tools were tested on ubuntu 20 lts
 - linkedin autoconnector is calibrated for a 1366 x 768 (16:9) resolution. Use ```VBoxManage controlvm "Name_of_VM" setvideomodehint 1366 768 32``` command on the host machine to set screen size
 - the setup_help folder contains screenshots of the required gui config.
 - here is a youtube video on how to configure it from scratch: https://www.youtube.com/watch?v=4aofRBBGRpo&feature=youtu.be
+
 
 Getting started:
 1. download and configure virtualbox with ubuntu 20 lts
