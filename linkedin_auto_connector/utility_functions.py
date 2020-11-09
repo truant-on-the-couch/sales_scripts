@@ -24,13 +24,13 @@ def get_and_send_msg():
         x, y = pyautogui.locateCenterOnScreen(
             '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png')
         pyautogui.click(x, y)
+        mark_with_an_x()
 
     except TypeError:
         # click send button manually
-        pyautogui.click(930, 450)
+        #pyautogui.click(930, 450)
+        print('couldnt find send button')
 
-        #print('couldnt find send button')
-    mark_with_an_x()
     time.sleep(1)
 
 
@@ -136,7 +136,7 @@ def handle_email_verif(second_round=bool, msgs=bool):
             except TypeError:
                 # click add a note button manually
                 print('couldnt find add a note button')
-                pyautogui.click(815, 333)
+                #pyautogui.click(815, 333)
 
             time.sleep(.5)
             get_and_send_msg()
@@ -150,9 +150,9 @@ def handle_email_verif(second_round=bool, msgs=bool):
 
             except TypeError:
                 # click send button manually
-                pyautogui.click(930, 311)
-                mark_with_an_x()
-                #print('couldnt find send button')
+                #pyautogui.click(930, 311)
+                # mark_with_an_x()
+                print('couldnt find send button')
 
             time.sleep(1)
 

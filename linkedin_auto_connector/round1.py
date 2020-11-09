@@ -13,7 +13,7 @@ def round1(msgs=bool):
         pyautogui.click(35, 130)
         time.sleep(2)
         # click search bar
-        pyautogui.click(x=345, y=157, clicks=1, button='left')
+        pyautogui.click(x=255, y=158, clicks=1, button='left')
         time.sleep(2)
         # delete current text
         pyautogui.hotkey('ctrl', 'a')
