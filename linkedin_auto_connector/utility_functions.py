@@ -22,7 +22,7 @@ def get_and_send_msg():
     # click done button
     try:
         x, y = pyautogui.locateCenterOnScreen(
-            '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png')
+            '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png', confidence=.7)
         pyautogui.click(x, y)
         mark_with_an_x()
 
@@ -144,7 +144,7 @@ def handle_email_verif(second_round=bool, msgs=bool):
             # click send button
             try:
                 x, y = pyautogui.locateCenterOnScreen(
-                    '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png')
+                    '/home/michel/sales_scripts/linkedin_auto_connector/images/send_button.png', confidence=.7)
                 pyautogui.click(x, y)
                 mark_with_an_x()
 
