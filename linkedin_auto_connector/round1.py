@@ -13,7 +13,7 @@ def round1(msgs=bool):
         pyautogui.click(35, 130)
         time.sleep(2)
         # click search bar
-        pyautogui.click(x=255, y=158, clicks=1, button='left')
+        pyautogui.click(x=302, y=158, clicks=1, button='left')
         time.sleep(2)
         # delete current text
         pyautogui.hotkey('ctrl', 'a')
@@ -77,7 +77,7 @@ def round1(msgs=bool):
         # logic for if first button is connect or message
         try:
             x, y = pyautogui.locateCenterOnScreen(
-                '/home/michel/sales_scripts/linkedin_auto_connector/images/connect_button.png', region=(815, 390, 104, 45))
+                '/home/michel/sales_scripts/linkedin_auto_connector/images/connect_button.png')
             pyautogui.click(x, y)
             time.sleep(1.5)
             # if email verif box
@@ -94,7 +94,7 @@ def round1(msgs=bool):
                 pyautogui.click(x=292, y=400, clicks=1, button='left')
                 time.sleep(4)
                 # click more
-                pyautogui.click(x=873, y=462, clicks=1, button='left')
+                pyautogui.click(x=867, y=415, clicks=1, button='left')
                 time.sleep(1)
                 try:
                     x, y = pyautogui.locateCenterOnScreen(
